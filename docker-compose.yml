@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  gateway:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Маппинг порта для backend
+    volumes:
+      - ./:/app
+    environment:
+      - NODE_ENV=production
